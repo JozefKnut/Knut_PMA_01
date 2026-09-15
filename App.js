@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{fontSize:100}}> Zadanie
+      <Text style={{fontSize:100}}> Zadanie PMA
       </Text>
       <StatusBar style="auto" />
     </View>
