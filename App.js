@@ -11,25 +11,28 @@ export default function App() {
       <StatusBar style="auto" />
       <Text style={counter >= 5 ? styles.red  : styles.nored}> {counter}
       </Text>
-      <Button
-        title="+"
-        onPress={() => setCount(counter + 1)}
-        color="#221584"
-        accessibilityLabel="Learn more about this purple button"
-      />
-      <Button
-        title="-"
-        color="#221584"
-        onPress={() => setCount(counter - 1)}
-        disabled={counter === 0 ? true : false}
-        accessibilityLabel="Learn more about this purple button"
-      />
-      <Button
-        title="Vynulovať"
-        onPress={() => setCount(0)}
-        color="#221584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <View style={styles.smallbutons }>
+        <View style={styles.smallbuton}>
+          <Button
+            title="+"
+            onPress={() => setCount(counter + 1)}
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
+        <View style={styles.smallbuton}>
+          <Button
+            title="-"
+            onPress={() => setCount(counter - 1)}
+            disabled={counter === 0 ? true : false}
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
+      </View >
+        <Button
+          title="Vynulovať"
+          onPress={() => setCount(0)}
+          accessibilityLabel="Learn more about this purple button"
+        />
       {counter >= 5 && <Text style={styles.warning}>Dosiahnutý limit</Text>}
       
 
@@ -47,5 +50,7 @@ const styles = StyleSheet.create({
   },
   red:{fontSize:100, color:"red"},
   nored:{fontSize:100},
-  warning:{color:"red"}
+  warning:{color:"red"},
+  smallbutons:{flexDirection: "row", gap: 10,margin:10},
+  smallbuton:{width: 80},
 });
